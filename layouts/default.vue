@@ -1,51 +1,27 @@
 <template>
   <v-app dark>
-    <v-app-bar fixed app>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-btn v-for="item in links" :key="item.title" plain :to="item.url">
-        {{ item.title }}
-      </v-btn>
-      <v-btn v-if="isLoggedIn" plain @click="onLogout"> Выйти </v-btn>
-      <v-spacer />
-    </v-app-bar>
+    <main-menu />
     <v-main>
       <v-container>
         <nuxt />
       </v-container>
     </v-main>
+
+    <my-progress />
+    <info />
   </v-app>
 </template>
 
 <script>
+import Info from '~/components/Info'
+import MyProgress from '~/components/MyProgress'
+import MainMenu from '~/components/MainMenu'
+
 export default {
-  data() {
-    return {
-      title: 'ООО Торговый дом',
-    }
-  },
-  computed: {
-    isLoggedIn() {
-      return false
-    },
-    links() {
-      if (!this.isLoggedIn) {
-        return [
-          { title: 'Главная', icon: 'mdi-home', url: '/' },
-          { title: 'Войти', icon: 'mdi-home', url: '/login' },
-        ]
-      } else {
-        return [
-          { title: 'Главная', icon: 'mdi-home', url: '/' },
-          { title: 'Профиль', icon: 'mdi-home', url: '/profile' },
-        ]
-      }
-    },
-  },
-  methods: {
-    onLogout() {
-      this.$router.push('/')
-    },
+  components: {
+    Info,
+    MyProgress,
+    MainMenu,
   },
 }
 </script>
