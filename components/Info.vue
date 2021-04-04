@@ -27,6 +27,19 @@ export default {
       return this.$store.getters.error ? 'red' : 'green'
     },
   },
+  mounted() {
+    const { message } = this.$route.query
+
+    switch (message) {
+      case 'authError':
+        this.$store.commit(
+          'setError',
+          'Доступ только для авторизованных пользователей',
+          { root: true }
+        )
+        break
+    }
+  },
   methods: {
     closeMessage() {
       this.$store.commit('clearMessage', { root: true })

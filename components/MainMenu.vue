@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     isLoggedIn() {
-      return false
+      return this.$store.getters['auth/isLoggedIn']
     },
     links() {
       if (!this.isLoggedIn) {
@@ -38,6 +38,7 @@ export default {
   },
   methods: {
     onLogout() {
+      this.$store.dispatch('auth/logoutUser')
       this.$router.push('/')
     },
   },
