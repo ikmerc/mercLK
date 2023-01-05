@@ -27,6 +27,7 @@ export default {
       return this.$store.getters.error ? 'red' : 'green'
     },
   },
+
   mounted() {
     const { message } = this.$route.query
     switch (message) {
