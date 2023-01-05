@@ -29,7 +29,6 @@ export default {
   },
   mounted() {
     const { message } = this.$route.query
-
     switch (message) {
       case 'authError':
         this.$store.commit(

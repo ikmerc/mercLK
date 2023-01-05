@@ -5,8 +5,8 @@
     <v-btn v-for="item in links" :key="item.title" plain :to="item.url">
       {{ item.title }}
     </v-btn>
-    <v-btn v-if="isLoggedIn" plain @click="onLogout"> Выйти </v-btn>
     <v-spacer />
+    <v-btn v-if="isLoggedIn" right plain @click="onLogout"> Выйти </v-btn>
   </v-app-bar>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   name: 'MainMenu',
   data() {
     return {
-      title: 'ООО Торговый дом',
+      title: 'ГК Меркурий: track лист',
     }
   },
   computed: {
@@ -31,7 +31,7 @@ export default {
       } else {
         return [
           { title: 'Главная', icon: 'mdi-home', url: '/' },
-          { title: 'Профиль', icon: 'mdi-home', url: '/profile' },
+          { title: 'Заявки', icon: 'mdi-home', url: '/profile' },
         ]
       }
     },

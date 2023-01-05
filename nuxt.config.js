@@ -3,8 +3,8 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - lk',
-    title: 'lk',
+    titleTemplate: '%s - Заявки на обслуживание',
+    title: 'Личный кабинет партнера',
     htmlAttrs: {
       lang: 'en',
     },
@@ -20,7 +20,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/axios.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -43,8 +43,8 @@ export default {
   axios: {
     baseURL:
       process.env.NODE_ENV === 'production'
-        ? 'http://localhost/nuxtsrv/hs/nuxt'
-        : 'http://localhost/nuxtsrv/hs/nuxt',
+        ? 'http://46.42.19.56:33884/ut11/hs/nuxt'
+        : 'http://46.42.19.56:33884/ut11/hs/nuxt',
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
